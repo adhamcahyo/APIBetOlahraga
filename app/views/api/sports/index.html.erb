@@ -1,0 +1,16 @@
+  <div class="container">
+    <h1>Data Pertandingan Olahraga</h1>
+    
+    <% if @sports.present? %>
+      <% @sports.each do |match| %>
+        <div class="match">
+          <h2><%= match['homeTeam']['name'] %> vs <%= match['awayTeam']['name'] %></h2>
+          <p><strong>Waktu:</strong> <%= match['startTime'] %></p>
+          <p><strong>Status:</strong> <%= match['status'] %></p>
+        </div>
+      <% end %>
+    <% else %>
+      <p>Tidak ada pertandingan yang sedang berlangsung saat ini.</p>
+    <% end %>
+  </div>
+  
